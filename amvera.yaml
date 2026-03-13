@@ -5,7 +5,7 @@ meta:
     version: 18
 
 build:
-  type: npm
+  skip: false
 
 run:
   persistenceMount: /data
