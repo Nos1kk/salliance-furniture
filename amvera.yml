@@ -1,11 +1,13 @@
 meta:
-  environment: nodejs
+  environment: node
   toolchain:
-    name: nodejs
+    name: npm
     version: 18
 
 build:
-  cmd: npm install
+  type: npm
 
 run:
-  cmd: npm start
+  persistenceMount: /data
+  containerPort: 3000
+  command: npm start
