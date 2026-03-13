@@ -1,0 +1,332 @@
+/* ============================================
+   АЛЬЯНС — Premium Animations
+   ============================================ */
+
+/* ---------- SCROLL ANIMATIONS ---------- */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 
+        opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.animate-on-scroll.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger для карточек */
+.animate-on-scroll[data-delay="100"] { transition-delay: 0.1s; }
+.animate-on-scroll[data-delay="150"] { transition-delay: 0.15s; }
+.animate-on-scroll[data-delay="200"] { transition-delay: 0.2s; }
+.animate-on-scroll[data-delay="300"] { transition-delay: 0.3s; }
+.animate-on-scroll[data-delay="450"] { transition-delay: 0.45s; }
+
+/* ---------- FADE IN UP (для товаров) ---------- */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(36px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Stagger для сетки товаров */
+.products-grid .product-card:nth-child(1) { animation-delay: 0.00s; }
+.products-grid .product-card:nth-child(2) { animation-delay: 0.08s; }
+.products-grid .product-card:nth-child(3) { animation-delay: 0.16s; }
+.products-grid .product-card:nth-child(4) { animation-delay: 0.24s; }
+.products-grid .product-card:nth-child(5) { animation-delay: 0.32s; }
+.products-grid .product-card:nth-child(6) { animation-delay: 0.40s; }
+.products-grid .product-card:nth-child(7) { animation-delay: 0.48s; }
+.products-grid .product-card:nth-child(8) { animation-delay: 0.56s; }
+
+/* ---------- SHINE EFFECT (наведение на карточки) ---------- */
+.shine-effect {
+    position: relative;
+    overflow: hidden;
+}
+.shine-effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(200, 165, 90, 0.06),
+        transparent
+    );
+    transform: skewX(-20deg);
+    transition: none;
+    z-index: 4;
+    pointer-events: none;
+}
+.shine-effect:hover::before {
+    animation: shineSlide 0.65s ease forwards;
+}
+@keyframes shineSlide {
+    to { left: 125%; }
+}
+
+/* ---------- RIPPLE EFFECT (кнопки) ---------- */
+.ripple {
+    position: relative;
+    overflow: hidden;
+}
+.ripple-effect {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(0);
+    animation: rippleAnim 0.55s linear;
+    pointer-events: none;
+}
+@keyframes rippleAnim {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* ---------- HERO PARTICLES ---------- */
+.hero-particle {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+@keyframes particleDrift {
+    0% {
+        transform: translateY(100vh) scale(0);
+        opacity: 0;
+    }
+    8% { opacity: 0.7; }
+    92% { opacity: 0.7; }
+    100% {
+        transform: translateY(-5vh) scale(1);
+        opacity: 0;
+    }
+}
+
+/* ---------- GOLDEN GLOW PULSE ---------- */
+@keyframes glowPulse {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(200, 165, 90, 0.1);
+    }
+    50% {
+        box-shadow: 0 0 40px rgba(200, 165, 90, 0.25);
+    }
+}
+
+.glow-pulse {
+    animation: glowPulse 3s ease-in-out infinite;
+}
+
+/* ---------- FLOAT ---------- */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+}
+.floating {
+    animation: float 5s ease-in-out infinite;
+}
+
+/* ---------- TEXT REVEAL ---------- */
+@keyframes textReveal {
+    from {
+        clip-path: inset(0 100% 0 0);
+    }
+    to {
+        clip-path: inset(0 0% 0 0);
+    }
+}
+
+.text-reveal {
+    animation: textReveal 0.8s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+/* ---------- SCALE IN ---------- */
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.scale-in {
+    animation: scaleIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ---------- SLIDE IN FROM LEFT ---------- */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.slide-in-left {
+    animation: slideInLeft 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ---------- SLIDE IN FROM RIGHT ---------- */
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.slide-in-right {
+    animation: slideInRight 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ---------- LINE DRAW (декоративные линии) ---------- */
+@keyframes lineDraw {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+}
+
+.line-draw {
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: lineDraw 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ---------- COUNTER ANIMATION GLOW ---------- */
+@keyframes counterGlow {
+    0% { text-shadow: none; }
+    50% { text-shadow: 0 0 20px rgba(200, 165, 90, 0.4); }
+    100% { text-shadow: none; }
+}
+
+/* ---------- HOVER TILT 3D (для карточек) ---------- */
+.tilt-card {
+    transition: transform 0.4s ease;
+    transform-style: preserve-3d;
+}
+
+/* ---------- IMAGE ZOOM ON SCROLL ---------- */
+@keyframes zoomIn {
+    from {
+        transform: scale(1.15);
+        filter: brightness(0.3);
+    }
+    to {
+        transform: scale(1);
+        filter: brightness(0.18);
+    }
+}
+
+/* ---------- MARQUEE ---------- */
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+/* ---------- BORDER GLOW EFFECT ---------- */
+@keyframes borderGlow {
+    0%, 100% {
+        border-color: rgba(200, 165, 90, 0.1);
+    }
+    50% {
+        border-color: rgba(200, 165, 90, 0.35);
+    }
+}
+
+.border-glow {
+    animation: borderGlow 3s ease-in-out infinite;
+}
+
+/* ---------- SUCCESS ICON POP ---------- */
+@keyframes successPop {
+    0% { transform: scale(0) rotate(-15deg); }
+    60% { transform: scale(1.15) rotate(5deg); }
+    100% { transform: scale(1) rotate(0deg); }
+}
+
+.success-icon i {
+    animation: successPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ---------- LOADING SPINNER ---------- */
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.fa-spin {
+    animation: spin 1s linear infinite;
+}
+
+/* ---------- SKELETON LOADING ---------- */
+.skeleton {
+    background: linear-gradient(
+        90deg,
+        rgba(255,255,255,0.03) 25%,
+        rgba(255,255,255,0.06) 50%,
+        rgba(255,255,255,0.03) 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.6s ease infinite;
+    border-radius: 8px;
+}
+
+@keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* ---------- SMOOTH PAGE LOAD ---------- */
+@keyframes pageLoad {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+body {
+    animation: pageLoad 0.5s ease;
+}
+
+/* ---------- FOCUS RING (accessibility) ---------- */
+*:focus-visible {
+    outline: 2px solid rgba(200, 165, 90, 0.5);
+    outline-offset: 2px;
+}
+
+/* ---------- REDUCED MOTION ---------- */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    .animate-on-scroll {
+        opacity: 1;
+        transform: none;
+    }
+}

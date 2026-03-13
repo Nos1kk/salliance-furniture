@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Альянс — Мебельная компания</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/animations.css">
+</head>
+<body>
+
+    <!-- PRELOADER -->
+    <div id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-logo">АЛЬЯНС</div>
+            <div class="preloader-bar"><div class="preloader-fill"></div></div>
+        </div>
+    </div>
+
+    <!-- CURSOR -->
+    <div class="cursor-follower"></div>
+
+    <!-- HEADER -->
+    <header id="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="#" class="logo">
+                    <span class="logo-text">АЛЬЯНС</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-link active">Главная</a></li>
+                    <li><a href="#about" class="nav-link">О нас</a></li>
+                    <li><a href="#catalog" class="nav-link">Каталог</a></li>
+                    <li><a href="#features" class="nav-link">Преимущества</a></li>
+                    <li><a href="#contact" class="nav-link">Контакты</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="cart-btn" id="cartBtn">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                    <button class="burger" id="burger">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-nav-links">
+            <li><a href="#home">Главная</a></li>
+            <li><a href="#about">О нас</a></li>
+            <li><a href="#catalog">Каталог</a></li>
+            <li><a href="#features">Преимущества</a></li>
+            <li><a href="#contact">Контакты</a></li>
+        </ul>
+    </div>
+
+    <!-- HERO -->
+    <section id="home" class="hero">
+        <div class="hero-parallax-bg"></div>
+        <div class="hero-particles" id="heroParticles"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-badge animate-on-scroll">
+                <span id="dHeroBadge">Премиум качество</span>
+            </div>
+            <h1 class="hero-title animate-on-scroll">
+                <span class="title-line" id="dHeroTitle1">Создаём</span>
+                <span class="title-line title-accent" id="dHeroTitle2">пространство</span>
+                <span class="title-line" id="dHeroTitle3">вашего комфорта</span>
+            </h1>
+            <p class="hero-subtitle animate-on-scroll" id="dHeroSubtitle">
+                Дизайнерские диваны от производителя с доставкой по всей России. 
+                Качественные материалы, современный дизайн, доступные цены.
+            </p>
+            <div class="hero-buttons animate-on-scroll">
+                <a href="#catalog" class="btn btn-primary btn-glow">
+                    <span id="dHeroBtn1">Смотреть каталог</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#about" class="btn btn-outline">
+                    <span id="dHeroBtn2">О компании</span>
+                </a>
+            </div>
+            <div class="hero-stats animate-on-scroll">
+                <div class="stat-item">
+                    <span class="stat-number" id="dStat1Value" data-count="500">0</span><span class="stat-plus">+</span>
+                    <span class="stat-label" id="dStat1Label">Моделей</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="dStat2Value" data-count="12">0</span>
+                    <span class="stat-label" id="dStat2Label">Лет опыта</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="dStat3Value" data-count="15000">0</span><span class="stat-plus">+</span>
+                    <span class="stat-label" id="dStat3Label">Клиентов</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator">
+            <div class="mouse"><div class="mouse-wheel"></div></div>
+            <span>Листайте вниз</span>
+        </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee-section">
+        <div class="marquee-track">
+            <div class="marquee-content" id="dMarquee">
+                <span>&#10038; Бесплатная доставка</span>
+                <span>&#10038; Гарантия 5 лет</span>
+                <span>&#10038; Рассрочка 0%</span>
+                <span>&#10038; 500+ моделей</span>
+                <span>&#10038; Своё производство</span>
+                <span>&#10038; Бесплатная доставка</span>
+                <span>&#10038; Гарантия 5 лет</span>
+                <span>&#10038; Рассрочка 0%</span>
+                <span>&#10038; 500+ моделей</span>
+                <span>&#10038; Своё производство</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ABOUT -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag" id="dAboutTag">О компании</span>
+                <h2 class="section-title"><span id="dAboutTitle">Почему выбирают</span> <span class="accent" id="dAboutTitleAccent">Альянс</span></h2>
+                <p class="section-subtitle" id="dAboutSubtitle">Мы создаём мебель, которая делает ваш дом уютнее</p>
+            </div>
+            <div class="about-grid" id="dAboutGrid">
+                <div class="about-card animate-on-scroll" data-delay="0">
+                    <div class="about-card-icon"><i class="fas fa-gem"></i></div>
+                    <h3>Премиум материалы</h3>
+                    <p>Используем только сертифицированные материалы европейского качества</p>
+                </div>
+                <div class="about-card animate-on-scroll" data-delay="100">
+                    <div class="about-card-icon"><i class="fas fa-truck"></i></div>
+                    <h3>Быстрая доставка</h3>
+                    <p>Доставляем по всей России в течение 3-7 рабочих дней</p>
+                </div>
+                <div class="about-card animate-on-scroll" data-delay="200">
+                    <div class="about-card-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Гарантия 5 лет</h3>
+                    <p>Расширенная гарантия на все изделия и бесплатный сервис</p>
+                </div>
+                <div class="about-card animate-on-scroll" data-delay="300">
+                    <div class="about-card-icon"><i class="fas fa-paint-brush"></i></div>
+                    <h3>Индивидуальный дизайн</h3>
+                    <p>Изготовим мебель по вашему проекту с учётом всех пожеланий</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATALOG -->
+    <section id="catalog" class="catalog-section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag" id="dCatalogTag">Каталог</span>
+                <h2 class="section-title"><span id="dCatalogTitle">Наши</span> <span class="accent" id="dCatalogTitleAccent">диваны</span></h2>
+                <p class="section-subtitle" id="dCatalogSubtitle">Выберите идеальный диван для вашего интерьера</p>
+            </div>
+            <div class="category-filter animate-on-scroll" id="categoryFilter">
+                <button class="filter-btn active" data-category="all"><span>Все модели</span></button>
+            </div>
+            <div class="products-grid" id="productsGrid">
+                <div class="loading-placeholder">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <p>Загрузка каталога...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" class="features-section">
+        <div class="parallax-layer parallax-bg"></div>
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag light" id="dFeaturesTag">Преимущества</span>
+                <h2 class="section-title light"><span id="dFeaturesTitle">Что нас</span> <span class="accent" id="dFeaturesTitleAccent">отличает</span></h2>
+            </div>
+            <div class="features-grid" id="dFeaturesGrid">
+                <div class="feature-card animate-on-scroll" data-delay="0">
+                    <div class="feature-number">01</div>
+                    <h3>Собственное производство</h3>
+                    <p>Полный цикл изготовления на собственной фабрике площадью 5000 м2</p>
+                </div>
+                <div class="feature-card animate-on-scroll" data-delay="150">
+                    <div class="feature-number">02</div>
+                    <h3>Экологичность</h3>
+                    <p>Все материалы проходят сертификацию на экологическую безопасность</p>
+                </div>
+                <div class="feature-card animate-on-scroll" data-delay="300">
+                    <div class="feature-number">03</div>
+                    <h3>Доступные цены</h3>
+                    <p>Работаем без посредников — цены ниже рыночных на 20-30%</p>
+                </div>
+                <div class="feature-card animate-on-scroll" data-delay="450">
+                    <div class="feature-number">04</div>
+                    <h3>3D-визуализация</h3>
+                    <p>Покажем, как диван будет выглядеть в вашем интерьере до покупки</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag" id="dContactTag">Контакты</span>
+                <h2 class="section-title"><span id="dContactTitle">Свяжитесь</span> <span class="accent" id="dContactTitleAccent">с нами</span></h2>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info animate-on-scroll">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div><h4>Адрес</h4><p id="dContactAddress">г. Москва, ул. Мебельная, д. 15</p></div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div><h4>Телефон</h4><p id="dContactPhone">+7 (999) 123-45-67</p></div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div><h4>Email</h4><p id="dContactEmail">info@alliance-mebel.ru</p></div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div><h4>Режим работы</h4><p id="dContactSchedule">Пн-Пт: 9:00 - 20:00</p></div>
+                    </div>
+                </div>
+                <form class="contact-form animate-on-scroll" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" placeholder="Ваше имя" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" placeholder="Телефон" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Сообщение" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-glow">
+                        <span>Отправить</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <span>АЛЬЯНС</span>
+                    </div>
+                    <p id="dFooterText">Создаём мебель мечты с 2012 года. Качество, которому доверяют.</p>
+                    <div class="social-links" id="dSocialLinks">
+                        <a href="#" id="dSocialVk"><i class="fab fa-vk"></i></a>
+                        <a href="#" id="dSocialTelegram"><i class="fab fa-telegram"></i></a>
+                        <a href="#" id="dSocialWhatsapp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" id="dSocialInstagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Каталог</h4>
+                    <ul id="dFooterCatalog">
+                        <li><a href="#catalog">Прямые диваны</a></li>
+                        <li><a href="#catalog">Угловые диваны</a></li>
+                        <li><a href="#catalog">Модульные диваны</a></li>
+                        <li><a href="#catalog">Диваны-кровати</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="#about">О компании</a></li>
+                        <li><a href="#features">Преимущества</a></li>
+                        <li><a href="#contact">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Контакты</h4>
+                    <p><i class="fas fa-phone"></i> <span id="dFooterPhone">+7 (999) 123-45-67</span></p>
+                    <p><i class="fas fa-envelope"></i> <span id="dFooterEmail">info@alliance-mebel.ru</span></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p id="dFooterCopyright">&copy; 2024 Альянс Мебель. Все права защищены.</p>
+                <a href="/admin" class="admin-link">Панель управления</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- PRODUCT MODAL -->
+    <div class="modal-overlay" id="productModal">
+        <div class="modal-content product-modal">
+            <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- CART SIDEBAR -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-bag"></i> Корзина</h3>
+            <button class="cart-close" id="cartClose"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-footer" id="cartFooter">
+            <div class="cart-total">
+                <span>Итого:</span>
+                <span class="total-price" id="totalPrice">0 ₽</span>
+            </div>
+            <button class="btn btn-primary btn-full" id="checkoutBtn">Оформить заявку</button>
+        </div>
+    </div>
+
+    <!-- CHECKOUT MODAL -->
+    <div class="modal-overlay" id="checkoutModal">
+        <div class="modal-content checkout-modal">
+            <button class="modal-close" id="checkoutClose"><i class="fas fa-times"></i></button>
+            <div class="checkout-body">
+                <h2><i class="fas fa-clipboard-list"></i> Оформление заявки</h2>
+                <form id="checkoutForm">
+                    <div id="checkoutFieldsContainer">
+                        <!-- Динамические поля -->
+                    </div>
+                    <div class="order-summary" id="orderSummary"></div>
+                    <button type="submit" class="btn btn-primary btn-full btn-glow">
+                        <span>Отправить заявку</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- SUCCESS -->
+    <div class="success-overlay" id="successOverlay">
+        <div class="success-content">
+            <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+            <h2>Заявка отправлена!</h2>
+            <p>Наш менеджер свяжется с вами в ближайшее время</p>
+            <button class="btn btn-primary" id="successClose">Отлично!</button>
+        </div>
+    </div>
+
+    <!-- NOTIFICATION -->
+    <div class="notification" id="notification">
+        <div class="notification-content">
+            <i class="fas fa-check-circle"></i>
+            <span id="notificationText"></span>
+        </div>
+    </div>
+
+    <script src="/js/main.js"></script>
+    <script src="/js/catalog.js"></script>
+    <script src="/js/cart.js"></script>
+</body>
+</html>

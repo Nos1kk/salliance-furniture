@@ -1,0 +1,16 @@
+meta:
+  environment: nodejs
+  toolchain:
+    name: nodejs
+    version: 18
+
+build:
+  type: npm
+  npm:
+    installCommand: npm install
+
+run:
+  type: npm
+  npm:
+    startCommand: npm start
+  containerPort: 3000
