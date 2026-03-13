@@ -1,0 +1,183 @@
+/* ============================================
+   BASE - Переменные, сброс, типографика, скроллбар
+   ============================================ */
+
+/* ---------- Reset ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--primary);
+    background: var(--light);
+    overflow-x: hidden;
+}
+
+/* ---------- Variables ---------- */
+:root {
+    /* Основные цвета */
+    --primary: #2c2c2c;
+    --accent: #b08d6e;
+    --accent-dark: #8c6d52;
+    --accent-light: #d4b896;
+    --gold: #c9a84c;
+    
+    /* Нейтральные */
+    --light: #f5f1ec;
+    --white: #ffffff;
+    --dark: #1a1a1a;
+    --darker: #111111;
+    --gray: #7a7a7a;
+    --light-gray: #e4dfd8;
+    
+    /* Статусы */
+    --sale-red: #d64541;
+    --new-green: #27ae60;
+    --info-blue: #3498db;
+    
+    /* Эффекты */
+    --shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 30px 80px rgba(0, 0, 0, 0.18);
+    --radius: 16px;
+    --radius-lg: 24px;
+    --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ---------- Typography ---------- */
+h1, h2, h3, h4, h5 {
+    font-family: 'Playfair Display', serif;
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+/* Section Headers */
+.section-header {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.section-label {
+    font-size: 0.75rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.section-title {
+    font-size: 2.8rem;
+    color: var(--dark);
+    margin-bottom: 18px;
+}
+
+.section-title span {
+    color: var(--accent);
+}
+
+.section-line {
+    width: 70px;
+    height: 3px;
+    background: var(--accent);
+    margin: 0 auto 18px;
+    border-radius: 3px;
+}
+
+.section-desc {
+    font-size: 1rem;
+    color: var(--gray);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.8;
+    font-weight: 300;
+}
+
+/* ---------- Scrollbar ---------- */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--light);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-dark);
+}
+
+/* ---------- Preloader ---------- */
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--dark);
+    z-index: 100000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.8s, visibility 0.8s;
+}
+
+.preloader.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.preloader-inner {
+    text-align: center;
+}
+
+.preloader-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: var(--accent);
+    letter-spacing: 12px;
+    animation: pulseGlow 1.5s ease-in-out infinite;
+}
+
+.preloader-tagline {
+    font-size: 0.8rem;
+    letter-spacing: 5px;
+    color: rgba(255, 255, 255, 0.4);
+    text-transform: uppercase;
+    margin: 10px 0 30px;
+}
+
+.preloader-bar {
+    width: 200px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 2px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.preloader-bar-fill {
+    width: 40%;
+    height: 100%;
+    background: var(--accent);
+    border-radius: 2px;
+    animation: loading 1s ease-in-out infinite;
+}

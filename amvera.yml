@@ -5,12 +5,7 @@ meta:
     version: 18
 
 build:
-  type: npm
-  npm:
-    installCommand: npm install
+  cmd: npm install
 
 run:
-  type: npm
-  npm:
-    startCommand: npm start
-  containerPort: 3000
+  cmd: npm start

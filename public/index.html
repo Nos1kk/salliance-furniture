@@ -3,258 +3,337 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Альянс — Мебельная компания</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>АЛЬЯНС — Мебель для жизни</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/animations.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
     <!-- PRELOADER -->
-    <div id="preloader">
+    <div class="preloader" id="preloader">
         <div class="preloader-inner">
             <div class="preloader-logo">АЛЬЯНС</div>
-            <div class="preloader-bar"><div class="preloader-fill"></div></div>
+            <div class="preloader-tagline">мебель для жизни</div>
+            <div class="preloader-bar"><div class="preloader-bar-fill"></div></div>
         </div>
     </div>
 
-    <!-- CURSOR -->
-    <div class="cursor-follower"></div>
-
-    <!-- HEADER -->
-    <header id="header">
-        <nav class="navbar">
-            <div class="nav-container">
-                <a href="#" class="logo">
-                    <span class="logo-text">АЛЬЯНС</span>
-                </a>
-                <ul class="nav-links">
-                    <li><a href="#home" class="nav-link active">Главная</a></li>
-                    <li><a href="#about" class="nav-link">О нас</a></li>
-                    <li><a href="#catalog" class="nav-link">Каталог</a></li>
-                    <li><a href="#features" class="nav-link">Преимущества</a></li>
-                    <li><a href="#contact" class="nav-link">Контакты</a></li>
-                </ul>
-                <div class="nav-actions">
-                    <button class="cart-btn" id="cartBtn">
-                        <i class="fas fa-shopping-bag"></i>
-                        <span class="cart-count" id="cartCount">0</span>
-                    </button>
-                    <button class="burger" id="burger">
-                        <span></span><span></span><span></span>
-                    </button>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <!-- MOBILE MENU -->
-    <div class="mobile-menu" id="mobileMenu">
-        <ul class="mobile-nav-links">
-            <li><a href="#home">Главная</a></li>
-            <li><a href="#about">О нас</a></li>
-            <li><a href="#catalog">Каталог</a></li>
-            <li><a href="#features">Преимущества</a></li>
-            <li><a href="#contact">Контакты</a></li>
-        </ul>
+    <!-- PROMO BANNER -->
+    <div class="promo-banner" id="promoBanner" style="display:none;">
+        <span id="promoTextDisplay"></span>
+        <button onclick="this.parentElement.style.display='none'"><i class="fas fa-times"></i></button>
     </div>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar" id="navbar">
+        <a href="#" class="nav-logo"><span class="logo-icon">◆</span> АЛЬЯНС</a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home" onclick="closeMenu()">Главная</a></li>
+            <li><a href="#about" onclick="closeMenu()">О нас</a></li>
+            <li><a href="#catalog" onclick="closeMenu()">Каталог</a></li>
+            <li><a href="#modules" onclick="closeMenu()">Модули</a></li>
+            <li><a href="#faq" onclick="closeMenu()">FAQ</a></li>
+            <li><a href="#reviews" onclick="closeMenu()">Отзывы</a></li>
+        </ul>
+        <div class="nav-actions">
+            <div class="nav-cart" onclick="toggleCart()" title="Корзина">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="cart-count" id="cartCount">0</span>
+            </div>
+            <div class="nav-admin-btn" onclick="openAdminLogin()" title="Панель управления">
+                <i class="fas fa-lock"></i>
+            </div>
+            <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
 
     <!-- HERO -->
-    <section id="home" class="hero">
-        <div class="hero-parallax-bg"></div>
-        <div class="hero-particles" id="heroParticles"></div>
+    <section class="hero" id="home">
+        <div class="hero-bg" id="heroBg"></div>
         <div class="hero-overlay"></div>
+        <div class="hero-particles" id="heroParticles"></div>
         <div class="hero-content">
-            <div class="hero-badge animate-on-scroll">
-                <span id="dHeroBadge">Премиум качество</span>
-            </div>
-            <h1 class="hero-title animate-on-scroll">
-                <span class="title-line" id="dHeroTitle1">Создаём</span>
-                <span class="title-line title-accent" id="dHeroTitle2">пространство</span>
-                <span class="title-line" id="dHeroTitle3">вашего комфорта</span>
-            </h1>
-            <p class="hero-subtitle animate-on-scroll" id="dHeroSubtitle">
-                Дизайнерские диваны от производителя с доставкой по всей России. 
-                Качественные материалы, современный дизайн, доступные цены.
+            <span class="hero-subtitle">◆ Мебельная компания АЛЬЯНС ◆</span>
+            <h1 class="hero-title">Создаём<br><span>Пространство</span><br>Для Жизни</h1>
+            <p class="hero-desc">
+                Объединяем качество, стиль и комфорт в каждом предмете мебели.
+                Модульные системы, угловые и прямые диваны — всё для вашего идеального интерьера.
             </p>
-            <div class="hero-buttons animate-on-scroll">
-                <a href="#catalog" class="btn btn-primary btn-glow">
-                    <span id="dHeroBtn1">Смотреть каталог</span>
-                    <i class="fas fa-arrow-right"></i>
-                </a>
-                <a href="#about" class="btn btn-outline">
-                    <span id="dHeroBtn2">О компании</span>
-                </a>
+            <div class="hero-btns">
+                <a href="#catalog" class="hero-btn primary">Каталог</a>
+                <a href="#about" class="hero-btn secondary">О компании</a>
             </div>
-            <div class="hero-stats animate-on-scroll">
-                <div class="stat-item">
-                    <span class="stat-number" id="dStat1Value" data-count="500">0</span><span class="stat-plus">+</span>
-                    <span class="stat-label" id="dStat1Label">Моделей</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number" id="dStat2Value" data-count="12">0</span>
-                    <span class="stat-label" id="dStat2Label">Лет опыта</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number" id="dStat3Value" data-count="15000">0</span><span class="stat-plus">+</span>
-                    <span class="stat-label" id="dStat3Label">Клиентов</span>
-                </div>
+            <div class="hero-stats">
+                <div class="hero-stat"><strong>8+</strong><span>лет на рынке</span></div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat"><strong>1200+</strong><span>довольных клиентов</span></div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat"><strong>50+</strong><span>моделей</span></div>
             </div>
         </div>
-        <div class="hero-scroll-indicator">
-            <div class="mouse"><div class="mouse-wheel"></div></div>
+        <div class="scroll-indicator">
             <span>Листайте вниз</span>
+            <div class="scroll-line"></div>
         </div>
     </section>
 
-    <!-- MARQUEE -->
-    <div class="marquee-section">
-        <div class="marquee-track">
-            <div class="marquee-content" id="dMarquee">
-                <span>&#10038; Бесплатная доставка</span>
-                <span>&#10038; Гарантия 5 лет</span>
-                <span>&#10038; Рассрочка 0%</span>
-                <span>&#10038; 500+ моделей</span>
-                <span>&#10038; Своё производство</span>
-                <span>&#10038; Бесплатная доставка</span>
-                <span>&#10038; Гарантия 5 лет</span>
-                <span>&#10038; Рассрочка 0%</span>
-                <span>&#10038; 500+ моделей</span>
-                <span>&#10038; Своё производство</span>
+    <!-- FEATURES / ABOUT -->
+    <section class="features" id="about">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">О компании</span>
+                <h2 class="section-title">Почему <span>АЛЬЯНС</span>?</h2>
+                <div class="section-line"></div>
+                <p class="section-desc">
+                    АЛЬЯНС — это союз мастерства, качественных материалов и внимания к каждой детали.
+                    Мы создаём мебель, которая становится частью вашей истории.
+                </p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card reveal">
+                    <div class="feature-icon-wrap"><i class="fas fa-handshake"></i></div>
+                    <h4>Надёжный Союз</h4>
+                    <p>АЛЬЯНС — значит партнёрство. Строим долгосрочные отношения с каждым клиентом</p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-icon-wrap"><i class="fas fa-cubes"></i></div>
+                    <h4>Модульные Системы</h4>
+                    <p>Создайте уникальную конфигурацию из десятков модулей — ваш диван, ваши правила</p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-icon-wrap"><i class="fas fa-shield-halved"></i></div>
+                    <h4>Гарантия 7 Лет</h4>
+                    <p>Расширенная гарантия на каркас и механизмы. Уверенность в каждом изделии</p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-icon-wrap"><i class="fas fa-truck-fast"></i></div>
+                    <h4>Доставка и Сборка</h4>
+                    <p>Бесплатная доставка по городу и профессиональная сборка на месте</p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-icon-wrap"><i class="fas fa-palette"></i></div>
+                    <h4>100+ Тканей</h4>
+                    <p>Огромный выбор обивочных материалов: от бюджетных до премиум класса</p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-icon-wrap"><i class="fas fa-ruler-combined"></i></div>
+                    <h4>Под Ваш Размер</h4>
+                    <p>Изготовим мебель по индивидуальным размерам вашего пространства</p>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- ABOUT -->
-    <section id="about" class="about-section">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <span class="section-tag" id="dAboutTag">О компании</span>
-                <h2 class="section-title"><span id="dAboutTitle">Почему выбирают</span> <span class="accent" id="dAboutTitleAccent">Альянс</span></h2>
-                <p class="section-subtitle" id="dAboutSubtitle">Мы создаём мебель, которая делает ваш дом уютнее</p>
-            </div>
-            <div class="about-grid" id="dAboutGrid">
-                <div class="about-card animate-on-scroll" data-delay="0">
-                    <div class="about-card-icon"><i class="fas fa-gem"></i></div>
-                    <h3>Премиум материалы</h3>
-                    <p>Используем только сертифицированные материалы европейского качества</p>
-                </div>
-                <div class="about-card animate-on-scroll" data-delay="100">
-                    <div class="about-card-icon"><i class="fas fa-truck"></i></div>
-                    <h3>Быстрая доставка</h3>
-                    <p>Доставляем по всей России в течение 3-7 рабочих дней</p>
-                </div>
-                <div class="about-card animate-on-scroll" data-delay="200">
-                    <div class="about-card-icon"><i class="fas fa-shield-alt"></i></div>
-                    <h3>Гарантия 5 лет</h3>
-                    <p>Расширенная гарантия на все изделия и бесплатный сервис</p>
-                </div>
-                <div class="about-card animate-on-scroll" data-delay="300">
-                    <div class="about-card-icon"><i class="fas fa-paint-brush"></i></div>
-                    <h3>Индивидуальный дизайн</h3>
-                    <p>Изготовим мебель по вашему проекту с учётом всех пожеланий</p>
-                </div>
-            </div>
+    <!-- PARALLAX 1 -->
+    <section class="parallax-section">
+        <div class="parallax-bg" data-speed="0.3"
+             style="background-image:url('https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=1920&q=80')"></div>
+        <div class="parallax-overlay"></div>
+        <div class="parallax-content">
+            <h2>АЛЬЯНС — союз качества и стиля</h2>
+            <p>Каждый диван создан с заботой о вашем комфорте</p>
         </div>
     </section>
 
     <!-- CATALOG -->
-    <section id="catalog" class="catalog-section">
+    <section class="catalog" id="catalog">
         <div class="container">
-            <div class="section-header animate-on-scroll">
-                <span class="section-tag" id="dCatalogTag">Каталог</span>
-                <h2 class="section-title"><span id="dCatalogTitle">Наши</span> <span class="accent" id="dCatalogTitleAccent">диваны</span></h2>
-                <p class="section-subtitle" id="dCatalogSubtitle">Выберите идеальный диван для вашего интерьера</p>
+            <div class="section-header reveal">
+                <span class="section-label">Коллекция</span>
+                <h2 class="section-title">Каталог <span>АЛЬЯНС</span></h2>
+                <div class="section-line"></div>
+                <p class="section-desc">Найдите свой идеальный диван в нашей коллекции</p>
             </div>
-            <div class="category-filter animate-on-scroll" id="categoryFilter">
-                <button class="filter-btn active" data-category="all"><span>Все модели</span></button>
+            <div class="catalog-controls reveal">
+                <div class="catalog-filters">
+                    <button class="filter-btn active" data-filter="all"><i class="fas fa-border-all"></i> Все</button>
+                    <button class="filter-btn" data-filter="straight"><i class="fas fa-couch"></i> Прямые</button>
+                    <button class="filter-btn" data-filter="corner"><i class="fas fa-vector-square"></i> Угловые</button>
+                    <button class="filter-btn" data-filter="modular"><i class="fas fa-cubes"></i> Модульные</button>
+                </div>
+                <div class="catalog-sort">
+                    <select id="sortSelect" onchange="sortProducts(this.value)">
+                        <option value="default">Сортировка</option>
+                        <option value="price-asc">Цена ↑</option>
+                        <option value="price-desc">Цена ↓</option>
+                        <option value="name">По названию</option>
+                    </select>
+                </div>
             </div>
-            <div class="products-grid" id="productsGrid">
-                <div class="loading-placeholder">
-                    <i class="fas fa-spinner fa-spin"></i>
-                    <p>Загрузка каталога...</p>
+            <div class="products-grid" id="productsGrid"></div>
+        </div>
+    </section>
+
+    <!-- MODULES SHOWCASE -->
+    <section class="modules-section" id="modules">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Конструктор</span>
+                <h2 class="section-title">Модульная <span>Система</span></h2>
+                <div class="section-line"></div>
+                <p class="section-desc">
+                    Соберите диван из отдельных модулей как конструктор.
+                    Каждый модуль можно комбинировать и докупить отдельно.
+                </p>
+            </div>
+            <div class="modules-grid" id="modulesGrid"></div>
+        </div>
+    </section>
+
+    <!-- PARALLAX 2 -->
+    <section class="parallax-section">
+        <div class="parallax-bg" data-speed="0.3"
+             style="background-image:url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1920&q=80')"></div>
+        <div class="parallax-overlay"></div>
+        <div class="parallax-content">
+            <h2>Более 1200+ счастливых семей</h2>
+            <p>Выбрали АЛЬЯНС для своего дома</p>
+        </div>
+    </section>
+
+    <!-- FAQ ACCORDION -->
+    <section class="accordion-section" id="faq">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Вопросы</span>
+                <h2 class="section-title">Частые <span>Вопросы</span></h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="accordion-container reveal">
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <h4><i class="fas fa-truck"></i> Какие сроки доставки?</h4>
+                        <div class="accordion-icon"><i class="fas fa-plus"></i></div>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-body-inner">
+                            Доставка по городу — 1-3 рабочих дня. По области — 3-7 дней.
+                            При заказе от 50 000 ₽ доставка бесплатно!
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <h4><i class="fas fa-ruler"></i> Можно заказать нестандартный размер?</h4>
+                        <div class="accordion-icon"><i class="fas fa-plus"></i></div>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-body-inner">
+                            Да! АЛЬЯНС изготавливает мебель по индивидуальным размерам.
+                            Стоимость +15-25%, срок 14-30 рабочих дней.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <h4><i class="fas fa-cubes"></i> Что такое модульный диван?</h4>
+                        <div class="accordion-icon"><i class="fas fa-plus"></i></div>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-body-inner">
+                            Модульный диван — конструктор из отдельных секций. Выбирайте модули
+                            (прямые, угловые, пуфы, оттоманки, подлокотники) и создавайте свою
+                            конфигурацию. Можно начать с базы и докупать модули позже.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <h4><i class="fas fa-palette"></i> Какие варианты обивки?</h4>
+                        <div class="accordion-icon"><i class="fas fa-plus"></i></div>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-body-inner">
+                            Велюр, рогожка, экокожа, натуральная кожа, микрофибра, жаккард —
+                            более 100 вариантов тканей и 30+ цветов. Образцы бесплатно.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <h4><i class="fas fa-shield-halved"></i> Как работает гарантия?</h4>
+                        <div class="accordion-icon"><i class="fas fa-plus"></i></div>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-body-inner">
+                            АЛЬЯНС даёт гарантию 7 лет на каркас и механизмы, 3 года на обивку.
+                            Мастер выезжает бесплатно в течение 3 рабочих дней.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <h4><i class="fas fa-credit-card"></i> Есть рассрочка?</h4>
+                        <div class="accordion-icon"><i class="fas fa-plus"></i></div>
+                    </div>
+                    <div class="accordion-body">
+                        <div class="accordion-body-inner">
+                            Да! Рассрочка без переплат на 6, 12 и 24 месяца через банки-партнёры.
+                            Нужен только паспорт, одобрение от 15 минут.
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FEATURES -->
-    <section id="features" class="features-section">
-        <div class="parallax-layer parallax-bg"></div>
+    <!-- TESTIMONIALS -->
+    <section class="testimonials" id="reviews">
         <div class="container">
-            <div class="section-header animate-on-scroll">
-                <span class="section-tag light" id="dFeaturesTag">Преимущества</span>
-                <h2 class="section-title light"><span id="dFeaturesTitle">Что нас</span> <span class="accent" id="dFeaturesTitleAccent">отличает</span></h2>
+            <div class="section-header reveal">
+                <span class="section-label">Отзывы</span>
+                <h2 class="section-title">Клиенты Об <span>АЛЬЯНС</span></h2>
+                <div class="section-line"></div>
             </div>
-            <div class="features-grid" id="dFeaturesGrid">
-                <div class="feature-card animate-on-scroll" data-delay="0">
-                    <div class="feature-number">01</div>
-                    <h3>Собственное производство</h3>
-                    <p>Полный цикл изготовления на собственной фабрике площадью 5000 м2</p>
-                </div>
-                <div class="feature-card animate-on-scroll" data-delay="150">
-                    <div class="feature-number">02</div>
-                    <h3>Экологичность</h3>
-                    <p>Все материалы проходят сертификацию на экологическую безопасность</p>
-                </div>
-                <div class="feature-card animate-on-scroll" data-delay="300">
-                    <div class="feature-number">03</div>
-                    <h3>Доступные цены</h3>
-                    <p>Работаем без посредников — цены ниже рыночных на 20-30%</p>
-                </div>
-                <div class="feature-card animate-on-scroll" data-delay="450">
-                    <div class="feature-number">04</div>
-                    <h3>3D-визуализация</h3>
-                    <p>Покажем, как диван будет выглядеть в вашем интерьере до покупки</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <span class="section-tag" id="dContactTag">Контакты</span>
-                <h2 class="section-title"><span id="dContactTitle">Свяжитесь</span> <span class="accent" id="dContactTitleAccent">с нами</span></h2>
-            </div>
-            <div class="contact-grid">
-                <div class="contact-info animate-on-scroll">
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div><h4>Адрес</h4><p id="dContactAddress">г. Москва, ул. Мебельная, д. 15</p></div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div><h4>Телефон</h4><p id="dContactPhone">+7 (999) 123-45-67</p></div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div><h4>Email</h4><p id="dContactEmail">info@alliance-mebel.ru</p></div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-clock"></i>
-                        <div><h4>Режим работы</h4><p id="dContactSchedule">Пн-Пт: 9:00 - 20:00</p></div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "Заказали в АЛЬЯНС модульный диван — качество потрясающее!
+                        Можно менять конфигурацию под любое настроение. Очень довольны!"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">АМ</div>
+                        <div>
+                            <div class="testimonial-author-name">Алексей Миронов</div>
+                            <div class="testimonial-author-title">Москва</div>
+                        </div>
                     </div>
                 </div>
-                <form class="contact-form animate-on-scroll" id="contactForm">
-                    <div class="form-group">
-                        <input type="text" placeholder="Ваше имя" required>
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "АЛЬЯНС — реально союз качества и сервиса. Доставили точно в срок,
+                        собрали аккуратно. Рекомендую всем!"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">ЕК</div>
+                        <div>
+                            <div class="testimonial-author-name">Екатерина Козлова</div>
+                            <div class="testimonial-author-title">Санкт-Петербург</div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <input type="tel" placeholder="Телефон" required>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "Третий раз заказываем в АЛЬЯНС. Угловой диван Альянс-Премиум —
+                        просто шедевр! Семья в восторге."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">ДС</div>
+                        <div>
+                            <div class="testimonial-author-name">Дмитрий Соколов</div>
+                            <div class="testimonial-author-title">Казань</div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <textarea placeholder="Сообщение" rows="4"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-glow">
-                        <span>Отправить</span>
-                        <i class="fas fa-paper-plane"></i>
-                    </button>
-                </form>
+                </div>
             </div>
         </div>
     </section>
@@ -263,113 +342,413 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-col">
-                    <div class="footer-logo">
-                        <span>АЛЬЯНС</span>
-                    </div>
-                    <p id="dFooterText">Создаём мебель мечты с 2012 года. Качество, которому доверяют.</p>
-                    <div class="social-links" id="dSocialLinks">
-                        <a href="#" id="dSocialVk"><i class="fab fa-vk"></i></a>
-                        <a href="#" id="dSocialTelegram"><i class="fab fa-telegram"></i></a>
-                        <a href="#" id="dSocialWhatsapp"><i class="fab fa-whatsapp"></i></a>
-                        <a href="#" id="dSocialInstagram"><i class="fab fa-instagram"></i></a>
+                <div class="footer-brand">
+                    <a href="#" class="nav-logo footer-logo">
+                        <span class="logo-icon">◆</span> АЛЬЯНС
+                    </a>
+                    <p>
+                        Мебельная компания АЛЬЯНС — союз мастерства и комфорта.
+                        Создаём мебель для жизни с 2016 года.
+                    </p>
+                    <div class="footer-socials">
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-vk"></i></a>
                     </div>
                 </div>
-                <div class="footer-col">
-                    <h4>Каталог</h4>
-                    <ul id="dFooterCatalog">
+                <div>
+                    <h5>Каталог</h5>
+                    <ul>
                         <li><a href="#catalog">Прямые диваны</a></li>
                         <li><a href="#catalog">Угловые диваны</a></li>
-                        <li><a href="#catalog">Модульные диваны</a></li>
-                        <li><a href="#catalog">Диваны-кровати</a></li>
+                        <li><a href="#modules">Модульные системы</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
-                    <h4>Информация</h4>
+                <div>
+                    <h5>Компания</h5>
                     <ul>
-                        <li><a href="#about">О компании</a></li>
-                        <li><a href="#features">Преимущества</a></li>
-                        <li><a href="#contact">Контакты</a></li>
+                        <li><a href="#about">О нас</a></li>
+                        <li><a href="#faq">Доставка и оплата</a></li>
+                        <li><a href="#faq">Гарантия</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
-                    <h4>Контакты</h4>
-                    <p><i class="fas fa-phone"></i> <span id="dFooterPhone">+7 (999) 123-45-67</span></p>
-                    <p><i class="fas fa-envelope"></i> <span id="dFooterEmail">info@alliance-mebel.ru</span></p>
+                <div>
+                    <h5>Контакты</h5>
+                    <ul>
+                        <li><a href="tel:+79056704413"><i class="fas fa-phone"></i> +7 (905) 670-44-13</a></li>
+                        <li><a href="mailto:info@alliance-mebel.ru"><i class="fas fa-envelope"></i> info@alliance-mebel.ru</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p id="dFooterCopyright">&copy; 2024 Альянс Мебель. Все права защищены.</p>
-                <a href="/admin" class="admin-link">Панель управления</a>
+                <p>© 2024 АЛЬЯНС. Все права защищены. Мебель для жизни.</p>
             </div>
         </div>
     </footer>
 
-    <!-- PRODUCT MODAL -->
-    <div class="modal-overlay" id="productModal">
-        <div class="modal-content product-modal">
-            <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
-            <div class="modal-body" id="modalBody"></div>
-        </div>
-    </div>
-
-    <!-- CART SIDEBAR -->
-    <div class="cart-overlay" id="cartOverlay"></div>
+    <!-- ==================== CART SIDEBAR ==================== -->
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
     <div class="cart-sidebar" id="cartSidebar">
         <div class="cart-header">
             <h3><i class="fas fa-shopping-bag"></i> Корзина</h3>
-            <button class="cart-close" id="cartClose"><i class="fas fa-times"></i></button>
+            <button class="cart-close" onclick="toggleCart()"><i class="fas fa-times"></i></button>
         </div>
-        <div class="cart-items" id="cartItems"></div>
-        <div class="cart-footer" id="cartFooter">
+        <div class="cart-items" id="cartItems">
+            <div class="cart-empty">
+                <i class="fas fa-shopping-bag"></i>
+                <p>Ваша корзина пуста</p>
+                <span>Добавьте товары из каталога</span>
+            </div>
+        </div>
+        <div class="cart-footer" id="cartFooter" style="display:none;">
             <div class="cart-total">
                 <span>Итого:</span>
-                <span class="total-price" id="totalPrice">0 ₽</span>
+                <span id="cartTotal">0 ₽</span>
             </div>
-            <button class="btn btn-primary btn-full" id="checkoutBtn">Оформить заявку</button>
+            <button class="checkout-btn" onclick="openCheckout()">
+                <i class="fas fa-credit-card"></i> Оформить заказ
+            </button>
         </div>
     </div>
 
-    <!-- CHECKOUT MODAL -->
+    <!-- ==================== CHECKOUT MODAL ==================== -->
     <div class="modal-overlay" id="checkoutModal">
-        <div class="modal-content checkout-modal">
-            <button class="modal-close" id="checkoutClose"><i class="fas fa-times"></i></button>
-            <div class="checkout-body">
-                <h2><i class="fas fa-clipboard-list"></i> Оформление заявки</h2>
-                <form id="checkoutForm">
-                    <div id="checkoutFieldsContainer">
-                        <!-- Динамические поля -->
+        <div class="modal">
+            <button class="modal-close" onclick="closeCheckout()"><i class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <div class="modal-icon"><i class="fas fa-clipboard-list"></i></div>
+                <h3>Оформление заказа</h3>
+                <p>Заполните данные и мы свяжемся для подтверждения</p>
+            </div>
+            <div class="order-summary" id="orderSummary"></div>
+            <form id="checkoutForm" onsubmit="submitOrder(event)">
+                <div class="form-group">
+                    <label><i class="fas fa-user"></i> Ваше имя *</label>
+                    <input type="text" id="customerName" placeholder="Иван Иванов" required>
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-phone"></i> Телефон *</label>
+                    <input type="tel" id="customerPhone" placeholder="+7 (999) 123-45-67" required>
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-envelope"></i> Email <span class="optional">(необязательно)</span></label>
+                    <input type="email" id="customerEmail" placeholder="example@mail.ru">
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-comment"></i> Комментарий <span class="optional">(необязательно)</span></label>
+                    <textarea id="customerComment" placeholder="Пожелания к заказу..." rows="3"></textarea>
+                </div>
+                <button type="submit" class="submit-order-btn" id="submitBtn">
+                    <i class="fas fa-paper-plane"></i> Отправить заказ
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ==================== ADMIN LOGIN MODAL ==================== -->
+    <div class="modal-overlay" id="adminLoginModal">
+        <div class="modal admin-login-modal">
+            <button class="modal-close" onclick="closeAdminLogin()"><i class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <div class="modal-icon admin-icon"><i class="fas fa-shield-halved"></i></div>
+                <h3>Вход в панель</h3>
+                <p>Доступ только для администраторов АЛЬЯНС</p>
+            </div>
+            <form id="adminLoginForm" onsubmit="adminLogin(event)">
+                <div class="form-group">
+                    <label><i class="fas fa-phone"></i> Номер телефона</label>
+                    <input type="tel" id="adminPhone" placeholder="+7 (___) ___-__-__" required>
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-key"></i> Пароль</label>
+                    <div class="password-field">
+                        <input type="password" id="adminPassword" placeholder="Введите пароль" required>
+                        <button type="button" class="toggle-pass" onclick="togglePasswordVisibility()">
+                            <i class="fas fa-eye" id="passToggleIcon"></i>
+                        </button>
                     </div>
-                    <div class="order-summary" id="orderSummary"></div>
-                    <button type="submit" class="btn btn-primary btn-full btn-glow">
-                        <span>Отправить заявку</span>
-                        <i class="fas fa-paper-plane"></i>
-                    </button>
-                </form>
+                </div>
+                <div class="login-error" id="loginError" style="display:none;">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <span id="loginErrorText">Неверный номер или пароль</span>
+                </div>
+                <button type="submit" class="admin-login-btn">
+                    <i class="fas fa-sign-in-alt"></i> Войти
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ==================== ADMIN PANEL ==================== -->
+    <div class="admin-overlay" id="adminOverlay">
+        <div class="admin-panel">
+            <!-- Header -->
+            <div class="admin-header">
+                <div class="admin-header-left">
+                    <h2><span class="logo-icon">◆</span> АЛЬЯНС</h2>
+                    <span class="admin-badge">Панель управления</span>
+                </div>
+                <div class="admin-header-right">
+                    <span class="admin-user"><i class="fas fa-user-shield"></i> Администратор</span>
+                    <button class="admin-close" onclick="closeAdmin()"><i class="fas fa-times"></i></button>
+                </div>
+            </div>
+
+            <!-- Nav Tabs -->
+            <div class="admin-nav">
+                <button class="admin-nav-btn active" onclick="switchAdminTab('dashboard',this)"><i class="fas fa-chart-pie"></i> Дашборд</button>
+                <button class="admin-nav-btn" onclick="switchAdminTab('add',this)"><i class="fas fa-plus-circle"></i> Добавить товар</button>
+                <button class="admin-nav-btn" onclick="switchAdminTab('products',this)"><i class="fas fa-boxes-stacked"></i> Товары</button>
+                <button class="admin-nav-btn" onclick="switchAdminTab('add-module',this)"><i class="fas fa-puzzle-piece"></i> Создать модуль</button>
+                <button class="admin-nav-btn" onclick="switchAdminTab('modules-list',this)"><i class="fas fa-cubes"></i> Модули</button>
+                <button class="admin-nav-btn" onclick="switchAdminTab('orders',this)"><i class="fas fa-clipboard-list"></i> Заказы</button>
+                <button class="admin-nav-btn" onclick="switchAdminTab('settings',this)"><i class="fas fa-cog"></i> Настройки</button>
+                <button class="admin-nav-btn" onclick="switchAdminTab('analytics',this)"><i class="fas fa-chart-line"></i> Аналитика</button>
+                <button class="admin-nav-btn logout-btn" onclick="adminLogout()"><i class="fas fa-sign-out-alt"></i> Выход</button>
+            </div>
+
+            <!-- Content Area -->
+            <div class="admin-content">
+
+                <!-- TAB: Dashboard -->
+                <div class="admin-tab-content" id="tabDashboard">
+                    <div class="dashboard-cards">
+                        <div class="dash-card"><div class="dash-card-icon" style="background:#e8f5e9;color:#27ae60;"><i class="fas fa-boxes-stacked"></i></div><div class="dash-card-info"><h4 id="dashTotalProducts">0</h4><span>Товаров</span></div></div>
+                        <div class="dash-card"><div class="dash-card-icon" style="background:#e3f2fd;color:#2196f3;"><i class="fas fa-puzzle-piece"></i></div><div class="dash-card-info"><h4 id="dashTotalModules">0</h4><span>Модулей</span></div></div>
+                        <div class="dash-card"><div class="dash-card-icon" style="background:#fff3e0;color:#ff9800;"><i class="fas fa-clipboard-list"></i></div><div class="dash-card-info"><h4 id="dashTotalOrders">0</h4><span>Заказов</span></div></div>
+                        <div class="dash-card"><div class="dash-card-icon" style="background:#fce4ec;color:#e91e63;"><i class="fas fa-tags"></i></div><div class="dash-card-info"><h4 id="dashTotalSale">0</h4><span>Со скидкой</span></div></div>
+                    </div>
+                    <div class="dash-recent">
+                        <h4><i class="fas fa-clock"></i> Последние действия</h4>
+                        <div class="activity-log" id="activityLog"><p class="empty-log">Нет активности</p></div>
+                    </div>
+                </div>
+
+                <!-- TAB: Add Product -->
+                <div class="admin-tab-content" id="tabAdd" style="display:none;">
+                    <h3 class="admin-section-title"><i class="fas fa-plus-circle"></i> Добавить товар</h3>
+                    <form class="admin-form" id="productForm" onsubmit="saveProduct(event)">
+                        <div class="form-row">
+                            <div class="form-group"><label>Название *</label><input type="text" id="prodName" placeholder="Диван Альянс-Премиум" required></div>
+                            <div class="form-group"><label>Категория *</label><select id="prodCategory" required><option value="">Выберите</option><option value="straight">Прямой</option><option value="corner">Угловой</option><option value="modular">Модульный</option></select></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group"><label>Цена (₽) *</label><input type="number" id="prodPrice" placeholder="45000" required></div>
+                            <div class="form-group"><label>Старая цена (₽)</label><input type="number" id="prodOldPrice" placeholder="60000"></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group"><label>Скидка (%)</label><input type="number" id="prodDiscount" placeholder="20" min="0" max="99"></div>
+                            <div class="form-group"><label>Размеры</label><input type="text" id="prodSize" placeholder="220×95×85 см"></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group"><label>Материал</label><input type="text" id="prodMaterial" placeholder="Велюр"></div>
+                            <div class="form-group"><label>Спальное место</label><input type="text" id="prodSleep" placeholder="140×200 см"></div>
+                        </div>
+                        <div class="form-group full-width"><label>Описание</label><textarea id="prodDesc" placeholder="Описание товара..." rows="3"></textarea></div>
+                        <div class="form-group full-width">
+                            <label>Изображение</label>
+                            <div class="image-upload-area">
+                                <div class="upload-tabs">
+                                    <button type="button" class="upload-tab active" onclick="switchUploadTab('url',this,'prod')"><i class="fas fa-link"></i> URL</button>
+                                    <button type="button" class="upload-tab" onclick="switchUploadTab('file',this,'prod')"><i class="fas fa-upload"></i> Файл</button>
+                                </div>
+                                <div class="upload-content" id="prodUploadUrl"><input type="url" id="prodImageUrl" placeholder="https://example.com/image.jpg"></div>
+                                <div class="upload-content" id="prodUploadFile" style="display:none;">
+                                    <div class="file-drop-zone" id="prodDropZone" onclick="document.getElementById('prodFileInput').click()">
+                                        <i class="fas fa-cloud-upload-alt"></i>
+                                        <p>Перетащите фото или нажмите</p>
+                                        <span>JPG, PNG, WEBP — до 5MB</span>
+                                        <input type="file" id="prodFileInput" accept="image/*" style="display:none" onchange="handleFileUpload(this,'prod')">
+                                    </div>
+                                </div>
+                                <div class="image-preview" id="prodImagePreview" style="display:none;">
+                                    <img id="prodPreviewImg" src="" alt="">
+                                    <button type="button" class="remove-preview" onclick="removePreview('prod')"><i class="fas fa-times"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group full-width">
+                            <label>Пометки</label>
+                            <div class="badge-toggles">
+                                <label class="badge-toggle"><input type="checkbox" id="prodBadgeNew"><span class="badge-label badge-new-label"><i class="fas fa-sparkles"></i> NEW</span></label>
+                                <label class="badge-toggle"><input type="checkbox" id="prodBadgeSale"><span class="badge-label badge-sale-label"><i class="fas fa-fire"></i> SALE</span></label>
+                                <label class="badge-toggle"><input type="checkbox" id="prodBadgeHit"><span class="badge-label badge-hit-label"><i class="fas fa-star"></i> ХИТ</span></label>
+                                <label class="badge-toggle"><input type="checkbox" id="prodBadgeExclusive"><span class="badge-label badge-exclusive-label"><i class="fas fa-gem"></i> ЭКСКЛЮЗИВ</span></label>
+                            </div>
+                        </div>
+                        <div class="form-group full-width">
+                            <label>Доступность</label>
+                            <div class="availability-toggles">
+                                <label class="radio-toggle"><input type="radio" name="prodAvail" value="instock" checked><span class="radio-label available">В наличии</span></label>
+                                <label class="radio-toggle"><input type="radio" name="prodAvail" value="order"><span class="radio-label on-order">Под заказ</span></label>
+                                <label class="radio-toggle"><input type="radio" name="prodAvail" value="out"><span class="radio-label out-stock">Нет в наличии</span></label>
+                            </div>
+                        </div>
+                        <input type="hidden" id="prodEditId" value="">
+                        <button type="submit" class="admin-save-btn" id="prodSaveBtn"><i class="fas fa-save"></i> Сохранить товар</button>
+                    </form>
+                </div>
+
+                <!-- TAB: Products List -->
+                <div class="admin-tab-content" id="tabProducts" style="display:none;">
+                    <div class="admin-list-header">
+                        <h3 class="admin-section-title"><i class="fas fa-boxes-stacked"></i> Все товары</h3>
+                        <div class="admin-search"><i class="fas fa-search"></i><input type="text" id="productSearch" placeholder="Поиск..." oninput="filterAdminProducts()"></div>
+                    </div>
+                    <div class="admin-products-table" id="adminProductsList"></div>
+                </div>
+
+                <!-- TAB: Add Module -->
+                <div class="admin-tab-content" id="tabAddModule" style="display:none;">
+                    <h3 class="admin-section-title"><i class="fas fa-puzzle-piece"></i> Создать модуль</h3>
+                    <div class="module-info-banner"><i class="fas fa-info-circle"></i><p>Модули — отдельные секции модульного дивана. Клиенты могут покупать их отдельно для создания своей конфигурации.</p></div>
+                    <form class="admin-form" id="moduleForm" onsubmit="saveModule(event)">
+                        <div class="form-row">
+                            <div class="form-group"><label>Название модуля *</label><input type="text" id="modName" placeholder="Прямая секция 100 см" required></div>
+                            <div class="form-group">
+                                <label>Тип модуля *</label>
+                                <select id="modType" required>
+                                    <option value="">Выберите тип</option>
+                                    <option value="straight-section">Прямая секция</option>
+                                    <option value="corner-section">Угловая секция</option>
+                                    <option value="ottoman">Оттоманка</option>
+                                    <option value="pouf">Пуф</option>
+                                    <option value="armrest">Подлокотник</option>
+                                    <option value="back-cushion">Спинка-подушка</option>
+                                    <option value="headrest">Подголовник</option>
+                                    <option value="bed-box">Бельевой ящик</option>
+                                    <option value="shelf">Полка</option>
+                                    <option value="other">Другое</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group"><label>Цена (₽) *</label><input type="number" id="modPrice" placeholder="12990" required></div>
+                            <div class="form-group"><label>Старая цена (₽)</label><input type="number" id="modOldPrice" placeholder="15000"></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group"><label>Размеры</label><input type="text" id="modSize" placeholder="100×90×85 см"></div>
+                            <div class="form-group"><label>Привязка к дивану</label><select id="modParent"><option value="">Универсальный</option></select></div>
+                        </div>
+                        <div class="form-group full-width"><label>Описание</label><textarea id="modDesc" placeholder="Описание модуля..." rows="3"></textarea></div>
+                        <div class="form-group full-width">
+                            <label>Изображение модуля</label>
+                            <div class="image-upload-area">
+                                <div class="upload-tabs">
+                                    <button type="button" class="upload-tab active" onclick="switchUploadTab('url',this,'mod')"><i class="fas fa-link"></i> URL</button>
+                                    <button type="button" class="upload-tab" onclick="switchUploadTab('file',this,'mod')"><i class="fas fa-upload"></i> Файл</button>
+                                </div>
+                                <div class="upload-content" id="modUploadUrl"><input type="url" id="modImageUrl" placeholder="https://example.com/module.jpg"></div>
+                                <div class="upload-content" id="modUploadFile" style="display:none;">
+                                    <div class="file-drop-zone" id="modDropZone" onclick="document.getElementById('modFileInput').click()">
+                                        <i class="fas fa-cloud-upload-alt"></i>
+                                        <p>Перетащите фото или нажмите</p>
+                                        <span>JPG, PNG, WEBP — до 5MB</span>
+                                        <input type="file" id="modFileInput" accept="image/*" style="display:none" onchange="handleFileUpload(this,'mod')">
+                                    </div>
+                                </div>
+                                <div class="image-preview" id="modImagePreview" style="display:none;">
+                                    <img id="modPreviewImg" src="" alt="">
+                                    <button type="button" class="remove-preview" onclick="removePreview('mod')"><i class="fas fa-times"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group full-width">
+                            <label>Пометки</label>
+                            <div class="badge-toggles">
+                                <label class="badge-toggle"><input type="checkbox" id="modBadgeNew"><span class="badge-label badge-new-label"><i class="fas fa-sparkles"></i> NEW</span></label>
+                                <label class="badge-toggle"><input type="checkbox" id="modBadgeSale"><span class="badge-label badge-sale-label"><i class="fas fa-fire"></i> SALE</span></label>
+                            </div>
+                        </div>
+                        <input type="hidden" id="modEditId" value="">
+                        <button type="submit" class="admin-save-btn"><i class="fas fa-save"></i> Сохранить модуль</button>
+                    </form>
+                </div>
+
+                <!-- TAB: Modules List -->
+                <div class="admin-tab-content" id="tabModulesList" style="display:none;">
+                    <div class="admin-list-header">
+                        <h3 class="admin-section-title"><i class="fas fa-cubes"></i> Все модули</h3>
+                        <div class="admin-search"><i class="fas fa-search"></i><input type="text" id="moduleSearch" placeholder="Поиск..." oninput="filterAdminModules()"></div>
+                    </div>
+                    <div class="admin-products-table" id="adminModulesList"></div>
+                </div>
+
+                <!-- TAB: Orders -->
+                <div class="admin-tab-content" id="tabOrders" style="display:none;">
+                    <h3 class="admin-section-title"><i class="fas fa-clipboard-list"></i> История заказов</h3>
+                    <div class="orders-list" id="ordersList"><p class="empty-log">Заказов пока нет</p></div>
+                </div>
+
+                <!-- TAB: Settings -->
+                <div class="admin-tab-content" id="tabSettings" style="display:none;">
+                    <h3 class="admin-section-title"><i class="fas fa-cog"></i> Настройки</h3>
+                    <div class="settings-grid">
+                        <div class="settings-card">
+                            <h4><i class="fas fa-key"></i> Сменить пароль</h4>
+                            <form onsubmit="changeAdminPassword(event)">
+                                <div class="form-group"><label>Текущий пароль</label><input type="password" id="currentPassword" required></div>
+                                <div class="form-group"><label>Новый пароль</label><input type="password" id="newPassword" required minlength="4"></div>
+                                <div class="form-group"><label>Подтвердите</label><input type="password" id="confirmPassword" required></div>
+                                <button type="submit" class="admin-save-btn small-btn"><i class="fas fa-save"></i> Сменить</button>
+                            </form>
+                        </div>
+                        <div class="settings-card">
+                            <h4><i class="fas fa-database"></i> Данные</h4>
+                            <p>Управление данными сайта</p>
+                            <div class="settings-actions">
+                                <button class="settings-btn" onclick="exportData()"><i class="fas fa-download"></i> Экспорт данных</button>
+                                <button class="settings-btn" onclick="document.getElementById('importFile').click()"><i class="fas fa-upload"></i> Импорт данных<input type="file" id="importFile" accept=".json" style="display:none" onchange="importData(this)"></button>
+                                <button class="settings-btn danger" onclick="resetAllData()"><i class="fas fa-trash-alt"></i> Сброс всех данных</button>
+                            </div>
+                        </div>
+                        <div class="settings-card">
+                            <h4><i class="fas fa-paint-brush"></i> Промо-баннер</h4>
+                            <form onsubmit="savePromoBanner(event)">
+                                <div class="form-group"><label>Текст баннера</label><input type="text" id="promoText" placeholder="Скидки до 30%!"></div>
+                                <label class="badge-toggle" style="margin-bottom:15px;"><input type="checkbox" id="promoActive"><span> Показывать баннер</span></label>
+                                <button type="submit" class="admin-save-btn small-btn"><i class="fas fa-save"></i> Сохранить</button>
+                            </form>
+                        </div>
+                        <div class="settings-card">
+                            <h4><i class="fas fa-user-plus"></i> Администраторы</h4>
+                            <form onsubmit="addNewAdmin(event)">
+                                <div class="form-group"><label>Телефон</label><input type="tel" id="newAdminPhone" placeholder="+7 (___) ___-__-__" required></div>
+                                <div class="form-group"><label>Пароль</label><input type="password" id="newAdminPass" placeholder="Минимум 4 символа" required minlength="4"></div>
+                                <button type="submit" class="admin-save-btn small-btn"><i class="fas fa-user-plus"></i> Добавить</button>
+                            </form>
+                            <div class="admin-users-list" id="adminUsersList"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB: Analytics -->
+                <div class="admin-tab-content" id="tabAnalytics" style="display:none;">
+                    <h3 class="admin-section-title"><i class="fas fa-chart-line"></i> Аналитика</h3>
+                    <div class="analytics-grid">
+                        <div class="analytics-card"><h4>По категориям</h4><div id="categoryChart"></div></div>
+                        <div class="analytics-card"><h4>По ценам</h4><div id="priceChart"></div></div>
+                        <div class="analytics-card full-width"><h4>Статистика</h4><div id="statsTable"></div></div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
 
-    <!-- SUCCESS -->
-    <div class="success-overlay" id="successOverlay">
-        <div class="success-content">
-            <div class="success-icon"><i class="fas fa-check-circle"></i></div>
-            <h2>Заявка отправлена!</h2>
-            <p>Наш менеджер свяжется с вами в ближайшее время</p>
-            <button class="btn btn-primary" id="successClose">Отлично!</button>
+    <!-- QUICK VIEW MODAL -->
+    <div class="modal-overlay" id="quickViewModal">
+        <div class="modal quick-view-modal">
+            <button class="modal-close" onclick="closeQuickView()"><i class="fas fa-times"></i></button>
+            <div class="quick-view-content" id="quickViewContent"></div>
         </div>
     </div>
 
-    <!-- NOTIFICATION -->
-    <div class="notification" id="notification">
-        <div class="notification-content">
-            <i class="fas fa-check-circle"></i>
-            <span id="notificationText"></span>
-        </div>
-    </div>
+    <!-- TOAST -->
+    <div class="toast" id="toast"></div>
 
-    <script src="/js/main.js"></script>
-    <script src="/js/catalog.js"></script>
-    <script src="/js/cart.js"></script>
+    <!-- JS FILES — порядок важен! app.js первый, admin.js второй -->
+    <script src="js/app.js"></script>
+    <script src="js/admin.js"></script>
 </body>
 </html>
