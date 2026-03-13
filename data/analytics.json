@@ -1,0 +1,16 @@
+{
+  "totalViews": 2,
+  "totalVisitors": 1,
+  "dailyViews": {
+    "2026-03-13": 2
+  },
+  "dailyVisitors": {
+    "2026-03-13": 1
+  },
+  "visitorIPs": {
+    "::1_2026-03-13": true
+  },
+  "pageViews": {
+    "/": 2
+  }
+}

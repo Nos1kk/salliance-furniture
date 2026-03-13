@@ -1,0 +1,124 @@
+{
+  "heroBadge": "Премиум качество",
+  "heroTitle1": "Создаём",
+  "heroTitle2": "пространство",
+  "heroTitle3": "вашего комфорта",
+  "heroSubtitle": "Дизайнерские диваны от производителя с доставкой по всей России. Качественные материалы, современный дизайн, доступные цены.",
+  "heroBtn1": "Смотреть каталог",
+  "heroBtn2": "О компании",
+  "stat1Value": "500",
+  "stat1Label": "Моделей",
+  "stat2Value": "12",
+  "stat2Label": "Лет опыта",
+  "stat3Value": "15000",
+  "stat3Label": "Клиентов",
+  "marqueeItems": [
+    "Бесплатная доставка",
+    "Гарантия 5 лет",
+    "Рассрочка 0%",
+    "500+ моделей",
+    "Своё производство"
+  ],
+  "aboutTag": "О компании",
+  "aboutTitle": "Почему выбирают",
+  "aboutTitleAccent": "Альянс",
+  "aboutSubtitle": "Мы создаём мебель, которая делает ваш дом уютнее",
+  "aboutCards": [
+    {
+      "icon": "fas fa-gem",
+      "title": "Премиум материалы",
+      "text": "Используем только сертифицированные материалы европейского качества"
+    },
+    {
+      "icon": "fas fa-truck",
+      "title": "Быстрая доставка",
+      "text": "Доставляем по всей России в течение 3-7 рабочих дней"
+    },
+    {
+      "icon": "fas fa-shield-alt",
+      "title": "Гарантия 5 лет",
+      "text": "Расширенная гарантия на все изделия и бесплатный сервис"
+    },
+    {
+      "icon": "fas fa-paint-brush",
+      "title": "Индивидуальный дизайн",
+      "text": "Изготовим мебель по вашему проекту с учётом всех пожеланий"
+    }
+  ],
+  "catalogTag": "Каталог",
+  "catalogTitle": "Наши",
+  "catalogTitleAccent": "диваны",
+  "catalogSubtitle": "Выберите идеальный диван для вашего интерьера",
+  "featuresTag": "Преимущества",
+  "featuresTitle": "Что нас",
+  "featuresTitleAccent": "отличает",
+  "featureCards": [
+    {
+      "number": "01",
+      "title": "Собственное производство",
+      "text": "Полный цикл изготовления на собственной фабрике площадью 5000 м2"
+    },
+    {
+      "number": "02",
+      "title": "Экологичность",
+      "text": "Все материалы проходят сертификацию на экологическую безопасность"
+    },
+    {
+      "number": "03",
+      "title": "Доступные цены",
+      "text": "Работаем без посредников — цены ниже рыночных на 20-30%"
+    },
+    {
+      "number": "04",
+      "title": "3D-визуализация",
+      "text": "Покажем, как диван будет выглядеть в вашем интерьере до покупки"
+    }
+  ],
+  "contactTag": "Контакты",
+  "contactTitle": "Свяжитесь",
+  "contactTitleAccent": "с нами",
+  "contactAddress": "г. Москва, ул. Мебельная, д. 15",
+  "contactPhone": "+7 (999) 123-45-67",
+  "contactEmail": "info@alliance-mebel.ru",
+  "contactSchedule": "Пн-Пт: 9:00 - 20:00",
+  "footerText": "Создаём мебель мечты с 2012 года. Качество, которому доверяют.",
+  "footerCopyright": "© 2024 Альянс Мебель. Все права защищены.",
+  "socialVk": "#",
+  "socialTelegram": "#",
+  "socialWhatsapp": "#",
+  "socialInstagram": "#",
+  "orderEmail": "kcel046@gmail.com",
+  "gmailAppPassword": "",
+  "checkoutFields": {
+    "name": {
+      "label": "Имя",
+      "required": true,
+      "enabled": true,
+      "placeholder": "Ваше имя"
+    },
+    "phone": {
+      "label": "Телефон",
+      "required": true,
+      "enabled": true,
+      "placeholder": "+7 (___) ___-__-__"
+    },
+    "email": {
+      "label": "Email",
+      "required": false,
+      "enabled": true,
+      "placeholder": "email@example.com"
+    },
+    "address": {
+      "label": "Адрес доставки",
+      "required": false,
+      "enabled": true,
+      "placeholder": "Город, улица, дом"
+    },
+    "comment": {
+      "label": "Комментарий",
+      "required": false,
+      "enabled": true,
+      "placeholder": "Пожелания"
+    }
+  }
+}
